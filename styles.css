@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+  }
+  
+  .groww-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .groww-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00d09c;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  nav button.active {
+    color: #00d09c;
+    font-weight: 600;
+  }
+  
+  nav button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #00d09c;
+  }
+  
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .user-balance {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .invest-button {
+    background-color: #00d09c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .stocks-grid, .mutual-funds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .stock-card, .mutual-fund-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+  
+  .stock-card:hover, .mutual-fund-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stock-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .stock-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .stock-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .stock-price {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .price-change.positive {
+    color: #00d09c;
+  }
+  
+  .price-change.negative {
+    color: #ff5252;
+  }
+  
+  .stock-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .stock-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stock-actions button {
+    flex-grow: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .watchlist-btn {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .buy-btn {
+    background-color: #00d09c;
+    color: white;
+  }
+  
+  .portfolio-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .portfolio-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-value h3 {
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .portfolio-value span {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .portfolio-performance {
+    text-align: right;
+  }
+  
+  .portfolio-performance .positive {
+    color: #00d09c;
+    font-weight: 600;
+  }
+  
+  .portfolio-holdings, .watchlist-section {
+    margin-top: 20px;
+  }
+  
+  .empty-state {
+    color: #666;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .portfolio-stock, .watchlist-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .portfolio-stock .stock-info, .watchlist-stock .stock-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .portfolio-stock .symbol, .watchlist-stock .symbol {
+    font-weight: 600;
+  }
+  
+  .portfolio-stock .quantity, .watchlist-stock .name {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .portfolio-stock .stock-value, .watchlist-stock .stock-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .mutual-fund-card .fund-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .mutual-fund-card .fund-category {
+    background-color: #00d09c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .mutual-fund-card .fund-returns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .fund-returns .return-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fund-returns .return-item span {
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .fund-returns .return-item strong {
+    margin-top: 5px;
+    color: #00d09c;
+  }
+  
+  .mutual-fund-card .fund-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fund-details .fund-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .invest-btn {
+    background-color: #00d09c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
